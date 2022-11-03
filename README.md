@@ -41,6 +41,7 @@ Implement brute force motif search algorithm.
 
 
 1. Function `Score()`
+
    Inputs:
    * a DNAStringSet of sequences (for example file `seq_score.fasta`)
    * a list of initial indexes
