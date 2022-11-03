@@ -10,10 +10,10 @@ Implement recursive function for PDP algorithm according to following pseudocode
 
 ```
 PartialDigestProblem(L)
-1 width <- Maximum element in L
-2 Delete(width,L)
-3 X <- {0, width}
-4 Place(L, X)
+1  width <- Maximum element in L
+2  Delete(width,L)
+3  X <- {0, width}
+4  Place(L, X)
 ```
 
 ``` 
