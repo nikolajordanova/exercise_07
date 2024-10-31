@@ -16,21 +16,21 @@
 * In R, create function `NextLeaf()` according to the following pseudocode.
 
 * Input:
-    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
-    * `L`; number of DNA sequences
+    * `s = (s1 s2 … st)`; an array of starting indexes, where *t* is the number of sequences
+    * `t`; number of DNA sequences
     * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
 * Output:
     * an array of starting indexes that corresponds to the next leaf in the tree
 
 ```
-NextLeaf(a, L, k)
-1   for i ← L to 1
-2     if a[i] < k
-3       a[i] ← a[i] + 1
-4       return a
-5     a[i] ← 1
-6   return a
+NextLeaf(s, t, k)
+1   for i ← t to 1
+2     if s[i] < k
+3       s[i] ← s[i] + 1
+4       return s
+5     s[i] ← 1
+6   return s
 ```
 
 ### Task 3
@@ -63,47 +63,47 @@ BFMotifSearch(DNA, t, n, l)
 * In R, create a function `NextVertex()` according to the following pseudocode.
 
 * Input:
-    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
+    * `s = (s1 s2 … st)`; an array of starting indexes, where *t* is the number of sequences
     * `i`; level of vertex
-    * `L`; number of DNA sequences
+    * `t`; number of DNA sequences
     * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
 * Output:
-    * *l*-mer of the next vertex in the tree
+    * the next vertex in the tree
     * current level of vertex
 
 ```
-NextVertex(a, i, L, k)
-1   if i < L
-2     a[i + 1] ← 1
-3     return (a, i + 1)
+NextVertex(s, i, t, k)
+1   if i < t
+2     s[i + 1] ← 1
+3     return (s, i + 1)
 4   else
-5     for j ← L to 1
-6       if a[j] < k
-7         a[j] ← a[j] + 1
-8         return (a, j)
-9   return (a, 0)
+5     for j ← t to 1
+6       if s[j] < k
+7         s[j] ← s[j] + 1
+8         return (s, j)
+9   return (s, 0)
 ```
 
 ### Task 5
 * In R, create a function `ByPass()` according to the following pseudocode.
 
 * Input:
-    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
+    * `s = (s1 s2 … st)`; an array of starting indexes, where *t* is the number of sequences
     * `i`; level of vertex
-    * `L`; number of DNA sequences
+    * `t`; number of DNA sequences
     * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
 * Output:
-    * *l*-mer of the next leaf after a skip of the subtree
+    * the next leaf after a skip of the subtree
     * current level of vertex
 
 ```
-ByPass(a, i, L, k)
+ByPass(s, i, t, k)
 1   for j ← i to 1
-2     if a[j] < k
-3       a[j] ← a[j] + 1
-4       return (a, j)
+2     if s[j] < k
+3       s[j] ← s[j] + 1
+4       return (s, j)
 5   return (a, 0)
 ```
 
