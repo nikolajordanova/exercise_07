@@ -2,26 +2,26 @@
 
 ## The Brute-Force Motif Search
 ### Task 1
- * In R, create a function `Score()`, that calculates the score for a consensus string.
+* In R, create a function `Score()`, that calculates the score for a consensus string.
 
- * Input:
-   * an array of starting indexes
-   * `DNAStringSet` of sequences (for example file `seq_score.fasta`)
-   * motif length
+* Input:
+    * an array of starting indexes
+    * `DNAStringSet` of sequences (for example file `seq_score.fasta`)
+    * motif length
    
- * Output:
-   * the score for the consensus string
+* Output:
+    * the score for the consensus string
  
 ### Task 2
- * In R, create function `NextLeaf()` according to the following pseudocode.
+* In R, create function `NextLeaf()` according to the following pseudocode.
 
- * Input:
-   * *L*-mer `a = (a1 a2 … aL)` of starting indexes
-   * number of DNA sequences
-   * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
+* Input:
+    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
+    * `L`; number of DNA sequences
+    * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
- * Output:
-   * *L*-mer of the next leaf in the tree
+* Output:
+    * an array of starting indexes that corresponds to the next leaf in the tree
 
 ```
 NextLeaf(a, L, k)
@@ -34,16 +34,16 @@ NextLeaf(a, L, k)
 ```
 
 ### Task 3
- * In R, create a function `BFMotifSearch()` according to the following pseudocode.
+* In R, create a function `BFMotifSearch()` according to the following pseudocode.
 
- * Input:
-   * `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
-   * number of DNA sequences
-   * length of each DNA sequence
-   * motif length
+* Input:
+    * `DNA`; `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
+    * `t`; number of DNA sequences
+    * `n`; length of each DNA sequence
+    * `l`; motif length
 
- * Output:
-   * an array of starting positions for each DNA sequence with the best score for the consensus string
+* Output:
+    * an array of starting positions for each DNA sequence with the best score for the consensus string
 
 ```
 BFMotifSearch(DNA, t, n, l)
@@ -60,17 +60,17 @@ BFMotifSearch(DNA, t, n, l)
 
 ## The Branch-and-Bound Motif Search
 ### Task 4
- * In R, create a function `NextVertex()` according to the following pseudocode.
+* In R, create a function `NextVertex()` according to the following pseudocode.
 
- * Input:
-   * *L*-mer `a = (a1 a2 … aL)` of starting indexes
-   * level of vertex
-   * number of DNA sequences
-   * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
+* Input:
+    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
+    * `i`; level of vertex
+    * `L`; number of DNA sequences
+    * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
- * Output:
-   * *L*-mer of the next vertex in the tree
-   * current level of vertex
+* Output:
+    * *l*-mer of the next vertex in the tree
+    * current level of vertex
 
 ```
 NextVertex(a, i, L, k)
@@ -86,17 +86,17 @@ NextVertex(a, i, L, k)
 ```
 
 ### Task 5
- * In R, create a function `ByPass()` according to the following pseudocode.
+* In R, create a function `ByPass()` according to the following pseudocode.
 
- * Input:
-   * *L*-mer `a = (a1 a2 … aL)` of starting indexes
-   * level of vertex
-   * number of DNA sequences
-   * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
+* Input:
+    * *l*-mer `a = (a1 a2 … al)`, where *l* is motif length; an array of starting indexes
+    * `i`; level of vertex
+    * `L`; number of DNA sequences
+    * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
- * Output:
-   * *L*-mer of the next leaf after a skip of  the subtree
-   * current level of vertex
+* Output:
+    * *l*-mer of the next leaf after a skip of the subtree
+    * current level of vertex
 
 ```
 ByPass(a, i, L, k)
@@ -108,18 +108,18 @@ ByPass(a, i, L, k)
 ```
 
 ### Task 6
- * In R, create a function `BBMotifSearch()` according to the following pseudocode.
+* In R, create a function `BBMotifSearch()` according to the following pseudocode.
 
- * Input:
-   * `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
-   * number of DNA sequences
-   * length of each DNA sequence
-   * motif length
+* Input:
+    * `DNA`; `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
+    * `t`; number of DNA sequences
+    * `n`; length of each DNA sequence
+    * `l`; motif length
 
- * Output:
-   * an array of starting positions for each DNA sequence with the best score for the consensus string
+* Output:
+    * an array of starting positions for each DNA sequence with the best score for the consensus string
 
- * Modify function `Score()` to calculate a partial consensus score for first `i` rows of `DNA`.
+* Modify function `Score()` to calculate a partial consensus score for first `i` rows of `DNA`.
 
 ```
 BBMotifSearch(DNA, t, n, l)
@@ -147,19 +147,19 @@ BBMotifSearch(DNA, t, n, l)
 <details>
 <summary>Basic Git settings</summary>
 
-> * Configure the Git editor
-> ```bash
-> git config --global core.editor notepad
-> ```
-> * Configure your name and email address
-> ```bash
-> git config --global user.name "Zuzana Nova"
-> git config --global user.email z.nova@vut.cz
-> ```
-> * Check current settings
-> ```bash
-> git config --global --list
-> ```
+>* Configure the Git editor
+>    ```bash
+>    git config --global core.editor notepad
+>    ```
+>* Configure your name and email address
+>    ```bash
+>    git config --global user.name "Zuzana Nova"
+>    git config --global user.email z.nova@vut.cz
+>    ```
+>* Check current settings
+>    ```bash
+>    git config --global --list
+>    ```
 >
 </details>
 
