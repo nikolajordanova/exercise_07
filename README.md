@@ -5,23 +5,23 @@
 * In R, create a function `Score()`, that calculates the score for a consensus string.
 
 * Input:
-    * an array of starting indexes
-    * `DNAStringSet` of sequences (for example file `seq_score.fasta`)
-    * motif length
+    * An array of starting indexes.
+    * `DNAStringSet` object of sequences (for example file `seq_score.fasta`).
+    * Motif length.
    
 * Output:
-    * the score for the consensus string
+    * The score for the consensus string.
  
 ### Task 2
 * In R, create function `NextLeaf()` according to the following pseudocode.
 
 * Input:
-    * `s = (s1 s2 … st)`; an array of starting indexes, where *t* is the number of sequences
-    * `t`; number of DNA sequences
-    * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
+    * `s` An array of starting indexes `s = (s1 s2 … st)`, where *t* is the number of sequences.
+    * `t` Number of sequences.
+    * `k` `k = n - l + 1`, where `n` is length of sequences and `l` is motif length.
 
 * Output:
-    * an array of starting indexes that corresponds to the next leaf in the tree
+    * `s` An array of starting indexes that corresponds to the next leaf in the tree.
 
 ```
 NextLeaf(s, t, k)
@@ -37,13 +37,13 @@ NextLeaf(s, t, k)
 * In R, create a function `BFMotifSearch()` according to the following pseudocode.
 
 * Input:
-    * `DNA`; `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
-    * `t`; number of DNA sequences
-    * `n`; length of each DNA sequence
-    * `l`; motif length
+    * `DNA` `DNAStringSet` object of sequences (for example file `seq_motif.fasta`).
+    * `t` Number of sequences.
+    * `n` Length of each sequence.
+    * `l` Motif length.
 
 * Output:
-    * an array of starting positions for each DNA sequence with the best score for the consensus string
+    * `bestMotif` An array of starting positions for each sequence with the best score for the consensus string.
 
 ```
 BFMotifSearch(DNA, t, n, l)
@@ -63,14 +63,14 @@ BFMotifSearch(DNA, t, n, l)
 * In R, create a function `NextVertex()` according to the following pseudocode.
 
 * Input:
-    * `s = (s1 s2 … st)`; an array of starting indexes, where *t* is the number of sequences
-    * `i`; level of vertex
-    * `t`; number of DNA sequences
-    * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
+    * `s` An array of starting indexes `s = (s1 s2 … st)`, where *t* is the number of sequences.
+    * `i` Level of vertex.
+    * `t` Number of sequences.
+    * `k` `k = n - l + 1`, where `n` is length of sequences and `l` is motif length.
 
 * Output:
-    * the next vertex in the tree
-    * current level of vertex
+    * `s` The next vertex in the tree.
+    * Current level of vertex.
 
 ```
 NextVertex(s, i, t, k)
@@ -95,7 +95,7 @@ NextVertex(s, i, t, k)
     * `k = n - l + 1`, where `n` is length of DNA sequences and `l` is motif length
 
 * Output:
-    * the next leaf after a skip of the subtree
+    * the next leaf after a skip of a subtree
     * current level of vertex
 
 ```
@@ -104,22 +104,21 @@ ByPass(s, i, t, k)
 2     if s[j] < k
 3       s[j] ← s[j] + 1
 4       return (s, j)
-5   return (a, 0)
+5   return (s, 0)
 ```
 
 ### Task 6
 * In R, create a function `BBMotifSearch()` according to the following pseudocode.
 
 * Input:
-    * `DNA`; `DNAStringSet` of DNA sequences (for example file `seq_motif.fasta`)
-    * `t`; number of DNA sequences
-    * `n`; length of each DNA sequence
-    * `l`; motif length
-
+    * `DNA` `DNAStringSet` object of sequences (for example file `seq_motif.fasta`).
+    * `t` Number of sequences.
+    * `n` Length of each sequence.
+    * `l` Motif length.
 * Output:
-    * an array of starting positions for each DNA sequence with the best score for the consensus string
+    * `bestMotif` An array of starting positions for each sequence with the best score for the consensus string.
 
-* Modify function `Score()` to calculate a partial consensus score for first `i` rows of `DNA`.
+* Modify function `Score()` to calculate score for the consensus string of the first `i` sequences of `DNA`.
 
 ```
 BBMotifSearch(DNA, t, n, l)
@@ -147,19 +146,19 @@ BBMotifSearch(DNA, t, n, l)
 <details>
 <summary>Basic Git settings</summary>
 
->* Configure the Git editor
->    ```bash
->    git config --global core.editor notepad
->    ```
->* Configure your name and email address
->    ```bash
->    git config --global user.name "Zuzana Nova"
->    git config --global user.email z.nova@vut.cz
->    ```
->* Check current settings
->    ```bash
->    git config --global --list
->    ```
+> * Configure the Git editor
+>     ```bash
+>     git config --global core.editor notepad
+>     ```
+> * Configure your name and email address
+>     ```bash
+>     git config --global user.name "Zuzana Nova"
+>     git config --global user.email z.nova@vut.cz
+>     ```
+> * Check current settings
+>     ```bash
+>     git config --global --list
+>     ```
 >
 </details>
 
@@ -167,9 +166,9 @@ BBMotifSearch(DNA, t, n, l)
   On the GitHub page of this repository find a <kbd>Fork</kbd> button in the upper right corner.
   
 * Clone forked repository from your GitHub page to your computer:
-```bash
-git clone <fork repository address>
-```
+    ```bash
+    git clone <fork repository address>
+    ```
 * In a local repository, set new remote for a project repository:
 ```bash
 git remote add upstream https://github.com/mpa-prg/exercise_07.git
@@ -178,16 +177,16 @@ git remote add upstream https://github.com/mpa-prg/exercise_07.git
 #### Send files to GitHub
 Create a new commit and send new changes to your remote repository.
 * Add file to a new commit.
-```bash
-git add <file_name>
-```
+    ```bash
+    git add <file_name>
+    ```
 * Create a new commit, enter commit message, save the file and close it.
-```bash
-git commit
-```
+    ```bash
+    git commit
+    ```
 * Send a new commit to your GitHub repository.
-```bash
-git push origin main
-```
+    ```bash
+    git push origin main
+    ```
 
 </details>
